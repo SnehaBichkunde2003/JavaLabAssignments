@@ -2,22 +2,9 @@ import java.util.Scanner;
 
 class SY2022bit056 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the number of registrations: ");
-        int n = sc.nextInt();
-
-        String[] regStr = new String[n];
-
-        for (int i = 0; i < n; i++) {
-            System.out.print("Enter registration " + (i + 1) + ": ");
-            regStr[i] = sc.next();
-        }
-
-        sc.close();
-
+        String regStr[] = {"2020bit001", "2021bcs165", "2022bme053",
+                "2023bch502", "2023BIT503", "2025bce423", "2023bce42"};
         SY2022bit056 obj = new SY2022bit056();
-
         int validCount = obj.getValidRegistrationsCount(regStr);
 
         System.out.println("Valid registrations count: " + validCount);
@@ -44,11 +31,12 @@ class SY2022bit056 {
         String branch = registration.substring(4, 7);
         String rollNumber = registration.substring(7);
 
-        if (!year.equals("2020") && !year.equals("2021") && !year.equals("2022") && !year.equals("2023") && !year.equals("2024")) {
+        int convertYear = Integer.parseInt(year);
+        if(2000<= convertYear&& convertYear>=2024){
             return false;
         }
 
-        if (!branch.equals("bit") && !branch.equals("bcs") && !branch.equals("bme")) {
+        if (!branch.equals("bit") && !branch.equals("bcs") && !branch.equals("bme") && !branch.equals("bch")) {
             return false;
         }
 
