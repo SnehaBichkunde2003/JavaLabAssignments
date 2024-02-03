@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 class SY2022bit056 {
     public static void main(String[] args) {
